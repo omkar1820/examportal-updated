@@ -1,0 +1,30 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Docker: Start App",
+      "type": "shell",
+      "command": "docker compose up --build",
+      "group": { "kind": "build", "isDefault": true },
+      "presentation": { "reveal": "always", "panel": "new" }
+    },
+    {
+      "label": "Docker: Stop App",
+      "type": "shell",
+      "command": "docker compose down",
+      "presentation": { "reveal": "always", "panel": "shared" }
+    },
+    {
+      "label": "Docker: View Logs",
+      "type": "shell",
+      "command": "docker compose logs -f",
+      "presentation": { "reveal": "always", "panel": "shared" }
+    },
+    {
+      "label": "Maven: Build WAR",
+      "type": "shell",
+      "command": "mvn clean package -DskipTests",
+      "presentation": { "reveal": "always", "panel": "shared" }
+    }
+  ]
+}
